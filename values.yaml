@@ -3,8 +3,7 @@ additionalArguments:
   - "--certificatesresolvers.letsencrypt.acme.storage=/data/acme.json"
   - "--certificatesresolvers.letsencrypt.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
   - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
-  - "--api.insecure=true"
   - "--accesslog=true"
-  - "--log.level=INFO"
-service:
-  type: NodePort
+  - "--log.level=DEBUG"
+  - "--api.dashboard=true"
+  - --entrypoints.websecure.http.tls.certResolver=letsencrypt
